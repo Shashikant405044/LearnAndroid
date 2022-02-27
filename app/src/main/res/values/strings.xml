@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">LearnAndroid</string>
+    <string name="mish_match">Miss Mtch Something</string>
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="very_severely_underweight">very severely underweight</string>
+    <string name="severely_underweight">severely underweight</string>
+    <string name="underweight">underweight</string>
+    <string name="normal">Normal (Healthy Weight)</string>
+    <string name="overweight">Obesewieght</string>
+    <string name="obese_class_i"> obese class (Moderetaly obeses)</string>
+    <string name="obese_class_ii"> obese classII</string>
+    <string name="obese_class_iii">obese classIII</string>
+
+    <string name="name"><b>Name</b> : Shashikant Kushwaha </string>
+    <string name="profeession"><b>Profession</b> : Android Developer </string>
+    <string name="qulification"><b>Qulification</b> : BCA </string>
+    <string name="company"><b>Company</b> : Chetu Private Limited </string>
+    <string name="about_bmi">Calculate Your BMI - Standard BMI Calculator - National Heart</string>
+
+    <string name="Bmi_artical"><b>Body mass index (BMI)</b> is a value derived from the mass (weight) and height of a person.
+        The BMI is defined as the body mass divided by the square of the body height, and is expressed in units of kg/m2,
+        resulting from mass in kilograms and height in metres.
+        The BMI may be determined using a table[a] or chart which displays BMI as a function of mass and height
+        using contour lines or colours for different BMI categories, and which may use other units of measurement
+        (converted to metric units for the calculation).</string>
+    <string name="bmi_long_arical">
+        <b>BMI is a convenient </b> rule of thumb used to broadly categorize a person as underweight, normal weight, overweight, or obese based on tissue mass
+        (muscle, fat, and bone) and height. Major adult BMI classifications are underweight (under 18.5 kg/m2), normal weight (18.5 to 24.9), overweight (25 to 29.9),
+        and obese (30 or more),</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

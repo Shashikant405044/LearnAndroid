@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EnqueryForm">
+
+     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+         <TextView
+
+             android:id="@+id/textRes"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:text="Enquery Form!"
+             android:textColor="#292827"
+             android:textSize="35sp"
+             android:textStyle="bold"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintRight_toRightOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />
+
+    </RelativeLayout>
+
+<com.google.android.material.textfield.TextInputLayout
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    app:counterEnabled="true"
+    app:counterMaxLength="20"
+    app:endIconMode="clear_text"
+    android:hint="Please Enter your Name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:inputType="text"
+        android:id="@+id/fName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:endIconMode="clear_text"
+        android:hint="Please Enter Last Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:maxLength="25"
+        android:inputType="text"
+        android:id="@+id/LName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="25"
+        app:endIconMode="clear_text"
+        android:hint="Please Enter Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:inputType="textEmailAddress"
+        android:id="@+id/email_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="13"
+
+        app:endIconMode="clear_text"
+        android:hint="Please Enter Phone Number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:maxLength="13"
+        android:inputType="number"
+        android:id="@+id/phone_no"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="#292827"
+            android:textSize="24sp"
+            android:text="Select Gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RadioGroup
+
+            android:id="@+id/rg_group"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.5"
+                android:textSize="24sp"
+                android:text="Male"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <RadioButton
+                android:layout_weight="0.5"
+                android:textSize="24sp"
+                android:text="Fmale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RadioGroup>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#292827"
+            android:textSize="24sp"
+            android:text="Select Course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <CheckBox
+            android:id="@+id/item1"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.5"
+            android:textSize="24sp"
+            android:text="Python"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+
+            android:id="@+id/item2"
+            android:layout_weight="0.5"
+            android:textSize="24sp"
+            android:text="Java"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <CheckBox
+
+            android:id="@+id/item3"
+            android:textSize="24sp"
+            android:text="SQL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <CheckBox
+            android:id="@+id/item4"
+
+            android:layout_marginLeft="5dp"
+            android:textSize="24sp"
+            android:text="C#"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+
+            android:id="@+id/item5"
+            android:textSize="24sp"
+            android:text="CSS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:id="@+id/item6"
+
+            android:layout_marginLeft="5dp"
+            android:textSize="24sp"
+            android:text="C#"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+
+            android:id="@+id/item7"
+            android:textSize="24sp"
+            android:text="HTML"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/btn_custome_size"
+            android:text="Submit" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/btn_custome_size"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:id="@+id/clear"
+            android:text="Clear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginLeft="20sp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:gravity="start"
+        android:id="@+id/firstDis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+<TextView
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:layout_marginLeft="20sp"
+
+    android:gravity="start"
+    android:id="@+id/lNameDis"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20sp"
+
+        android:gravity="start"
+        android:id="@+id/mailNoDis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20sp"
+
+        android:gravity="start"
+        android:id="@+id/phonenodis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20sp"
+
+        android:gravity="start"
+        android:id="@+id/gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20sp"
+
+        android:gravity="start"
+        android:id="@+id/checkitemdis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone" />
+</LinearLayout>

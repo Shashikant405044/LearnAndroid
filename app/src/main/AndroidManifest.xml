@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.learnandroid">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/appicon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LearnAndroid">
+        <activity
+            android:name=".contactlistApp.activity.ContactDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".contactlistApp.activity.ContactApplication"
+            android:exported="false" />
+        <activity
+            android:name=".dbActivity.ProfileListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".fragments.fragmentsimpletransication.WelcomeHome"
+            android:exported="false" />
+        <activity
+            android:name=".fragments.fTofcommnication.FTFMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bmiapp.AboutDeveloper"
+            android:exported="false" />
+        <activity
+            android:name=".listview.ListViewData"
+            android:exported="false" />
+        <activity
+            android:name=".ToastItem"
+            android:exported="false" />
+        <activity
+            android:name=".fragments.ftoactivity.MainFragmentToActivity"
+            android:exported="false" />
+        <activity
+            android:name=".fragments.fragmentsimpletransication.FragmentParentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DataAndTime"
+            android:exported="false" />
+        <activity
+            android:name=".bmiapp.ContactUs"
+            android:exported="true" />
+        <activity
+            android:name=".ParseableDataIntent"
+            android:exported="true" />
+        <activity
+            android:name=".EnqueryReciveData"
+            android:exported="true" />
+        <activity
+            android:name=".PopUpMenu"
+            android:exported="true" />
+        <activity
+            android:name=".bmiapp.AboutUs"
+            android:exported="true" />
+        <activity
+            android:name=".EnqueryForm"
+            android:exported="true" />
+        <activity
+            android:name=".IntentActivity2"
+            android:exported="true" />
+        <activity
+            android:name=".IntentActivity1"
+            android:exported="true" />
+        <activity
+            android:name=".bmiapp.BmiChartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".bmiapp.BmiApplication"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DataAndTime">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <DatePicker
+        android:id="@+id/date_piker"
+        android:layout_margin="20dp"
+        android:text="Date Piker"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+       <EditText
+           android:layout_margin="20dp"
+           android:id="@+id/dataDisplay"
+           android:gravity="center"
+           android:hint="day/mm/yyyy"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+    <TimePicker
+        android:id="@+id/time_piker"
+        android:layout_margin="20dp"
+        android:text="Time Piker"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_margin="20dp"
+        android:text="Chronometer"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</ScrollView>

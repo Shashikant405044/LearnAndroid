@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:scrollbars="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="@drawable/androidimg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+<LinearLayout
+    android:layout_margin="10dp"
+    android:layout_marginTop="8dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_weight="2"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/btn_custome_size"
+            android:layout_weight="1"
+            style="@style/Widget.AppCompat.ActionMode"
+            android:shadowColor="#339A1212"
+            android:id="@+id/Bmi_cal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:drawableStart="@drawable/e0003"
+            android:text="BMI" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/enquery_Form"
+            android:background="@drawable/btn_custome_size"
+            style="@style/Widget.AppCompat.ActionMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/e0004"
+
+            android:text="Enquery-Form" />
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:weightSum="2"
+     android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/btn_custome_size"
+
+            style="@style/Widget.AppCompat.ActionMode"
+            android:layout_weight="1"
+            android:id="@+id/intentExample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:drawableStart="@drawable/e0005"
+
+            android:text="Expl Intent " />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:drawableStart="@drawable/e0006"
+            android:background="@drawable/btn_custome_size"
+
+            style="@style/Widget.AppCompat.ActionMode"
+            android:layout_weight="1"
+            android:id="@+id/toast_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="Toast" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center"
+       android:weightSum="2"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:drawableStart="@drawable/e0007"
+            android:background="@drawable/btn_custome_size"
+
+            style="@style/Widget.AppCompat.ActionMode"
+            android:layout_weight="1"
+            android:id="@+id/popUpMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="POPUPMENU" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:drawableStart="@drawable/e0008"
+
+            android:background="@drawable/btn_custome_size"
+            style="@style/Widget.AppCompat.ActionMode"
+            android:layout_weight="1"
+            android:id="@+id/ShareIntent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+
+            android:text="ShareData" />
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:weightSum="2"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:drawableStart="@drawable/e0009"
+            android:background="@drawable/btn_custome_size"
+
+            style="@style/Widget.AppCompat.ActionMode"
+            android:layout_weight="1"
+            android:id="@+id/date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="  DateTime  " />
+        <androidx.appcompat.widget.AppCompatButton
+            android:drawableStart="@drawable/e0010"
+            android:background="@drawable/btn_custome_size"
+
+            style="@style/Widget.AppCompat.ActionMode"
+            android:layout_weight="1"
+
+            android:id="@+id/fragmentToActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="Fmt-Actity" />
+
+
+
+
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:weightSum="2"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.AppCompatButton
+            android:drawableStart="@drawable/e0011"
+
+            android:id="@+id/ftofragment"
+            android:background="@drawable/btn_custome_size"
+            style="@style/Widget.AppCompat.ActionMode"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="FTO-Fragment" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:drawableStart="@drawable/e0012"
+            android:background="@drawable/btn_custome_size"
+
+            style="@style/Widget.AppCompat.ActionMode"
+            android:layout_weight="1"
+
+            android:id="@+id/fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text=" LoginFr?" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:weightSum="2"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:drawableStart="@drawable/e0346"
+            android:background="@drawable/btn_custome_size"
+
+            android:id="@+id/SqlLiteDB"
+            style="@style/Widget.AppCompat.ActionMode"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="SqlLiteDB" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/btn_custome_size"
+            style="@style/Widget.AppCompat.ActionMode"
+            android:layout_weight="1"
+            android:id="@+id/contactListApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="ContactListApp" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -20,6 +20,6 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:onClick="flating_btn"
-        android:src="@drawable/programmer" />
+        android:src="@drawable/add_icon" />
 
 </RelativeLayout>

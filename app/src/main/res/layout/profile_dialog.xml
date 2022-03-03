@@ -46,7 +46,8 @@
     <androidx.appcompat.widget.AppCompatButton
         android:layout_weight="1"
         android:id="@+id/profile_create"
-        android:background="@drawable/btn_custome_size"
+        android:background="#333"
+        android:textColor="#ffff"
         android:layout_margin="30dp"
         android:text="Save"
         android:layout_width="match_parent"

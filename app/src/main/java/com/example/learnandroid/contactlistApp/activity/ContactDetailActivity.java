@@ -17,6 +17,7 @@ import com.example.learnandroid.contactlistApp.adapter.MyContactRecyclerViewAdap
 import com.example.learnandroid.contactlistApp.database.CDataBaseAdapter;
 import com.example.learnandroid.contactlistApp.interfascpak.OnItemClickListner;
 import com.example.learnandroid.contactlistApp.model.ContactList;
+
 import com.example.learnandroid.databinding.ActivityContactDetailBinding;
 import com.example.learnandroid.databinding.UpdateContactListItemBinding;
 import com.example.learnandroid.databinding.UpdateRowDataBinding;
@@ -31,7 +32,7 @@ public class ContactDetailActivity extends AppCompatActivity {
     ContactApplication contactApplication;
     CDataBaseAdapter adapter;
 
-
+    Intent intent;
     Cursor cursor;
     int clickedPosition ;
     boolean isUpdate = false;
@@ -41,15 +42,14 @@ public class ContactDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityContactDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        loadDataInListView();
+        ContactDetailActivity.this.setTitle("ContactDetails");
+       // loadDataInListView();
         //contactApplication = new ContactApplication();
       //  contactApplication.getAllContactLit();
 
         adapter = new CDataBaseAdapter(this);
         adapter.openDataBase();
-        Intent intent =getIntent();
-
-
+        Intent intent = getIntent();
         String fName= intent.getStringExtra("fname");
         String Last= intent.getStringExtra("lname");
         String phoneno= intent.getStringExtra("mobil");
@@ -63,6 +63,14 @@ public class ContactDetailActivity extends AppCompatActivity {
         binding.addressInputDetails.setText(address);
 
 
+        updateContactListItem();
+
+
+
+    }
+
+    private void updateContactListItem() {
+              getAllContactLit();
 
         binding.editCotactBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,24 +85,42 @@ public class ContactDetailActivity extends AppCompatActivity {
                 // full width show Layout
                 Window window = dialog.getWindow();
                 window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
-               updateContactListItemBinding.fName.setText(cursor.getString(1));
-               updateContactListItemBinding.LName.setText(cursor.getString(2));
-               updateContactListItemBinding.phoneNo.setText(cursor.getString(3));
-               updateContactListItemBinding.emailId.setText(cursor.getString(4));
-               updateContactListItemBinding.addressInput.setText(cursor.getString(5));
-             //  contactApplication.loadDataInListView();
+                // updateContactListItemBinding.fName.setText(cursor.getString(1));
+//               updateContactListItemBinding.LName.setText(cursor.getString(2));
+//               updateContactListItemBinding.phoneNo.setText(cursor.getString(3));
+//               updateContactListItemBinding.emailId.setText(cursor.getString(4));
+//               updateContactListItemBinding.addressInput.setText(cursor.getString(5));
+                //  contactApplication.loadDataInListView();
 
+
+                Intent intent = getIntent();
+                String fName= intent.getStringExtra("fname");
+                String Last= intent.getStringExtra("lname");
+                String phoneno= intent.getStringExtra("mobil");
+                String email= intent.getStringExtra("email");
+                String address= intent.getStringExtra("address");
+                // String value2= intent.getStringExtra("EXTRA_KEY_2");
+                updateContactListItemBinding.fName.setText(fName);
+                updateContactListItemBinding.LName.setText(Last);
+                updateContactListItemBinding.phoneNo.setText(phoneno);
+                updateContactListItemBinding.emailId.setText(email);
+                updateContactListItemBinding.addressInput.setText(address);
                 updateContactListItemBinding.saveUpdateBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        adapter.updateRecord(ContactDetailActivity.this,
-                                updateContactListItemBinding.fName.getText().toString(),
+
+                        adapter.updateRecord(ContactDetailActivity.this, updateContactListItemBinding.fName.getText().toString(),
                                 updateContactListItemBinding.LName.getText().toString(),
                                 updateContactListItemBinding.phoneNo.getText().toString(),
                                 updateContactListItemBinding.emailId.getText().toString(),
-                                updateContactListItemBinding.addressInput.getText().toString(),cursor.getString(0));
-                        dialog.dismiss();
-                        loadDataInListView();
+                                updateContactListItemBinding.addressInput.getText().toString(),
+                                cursor.getString(0));
+                               dialog.dismiss();
+//                               updateContactListItem();
+//                               loadDataInListView();
+                               intent();
+
+
                     }
                 });
 
@@ -102,6 +128,23 @@ public class ContactDetailActivity extends AppCompatActivity {
             }
         });
 
+
+        binding.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                cursor.moveToPosition(clickedPosition);
+                String rowId = cursor.getString(0);
+                adapter.deleteSingleRecord(ContactDetailActivity.this,rowId);
+                loadDataInListView();
+                intent();
+            }
+        });
+    }
+
+    private void intent() {
+        Intent ref = new Intent(ContactDetailActivity.this, ContactApplication.class);
+        startActivity(ref);
     }
 
     private void loadDataInListView() {
@@ -113,6 +156,7 @@ public class ContactDetailActivity extends AppCompatActivity {
 
             }
         });
+
         adapter.notifyDataSetChanged();
     }
 

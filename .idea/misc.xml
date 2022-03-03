@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/LearnAndroid/app/src/main/res/drawable/add_icon.xml" value="0.2085" />
+        <entry key="..\:/LearnAndroid/app/src/main/res/drawable/address.xml" value="0.132" />
         <entry key="..\:/LearnAndroid/app/src/main/res/drawable/btn_custome_size.xml" value="0.1645" />
         <entry key="..\:/LearnAndroid/app/src/main/res/drawable/button_selector.xml" value="0.1953125" />
         <entry key="..\:/LearnAndroid/app/src/main/res/drawable/button_shap.xml" value="0.108" />
@@ -33,7 +35,7 @@
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/activity_main_fragment_to.xml" value="0.1" />
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/activity_parseable_data_intent.xml" value="0.20416666666666666" />
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/activity_pop_up_menu.xml" value="0.17447916666666666" />
-        <entry key="..\:/LearnAndroid/app/src/main/res/layout/activity_profile_list.xml" value="0.153125" />
+        <entry key="..\:/LearnAndroid/app/src/main/res/layout/activity_profile_list.xml" value="0.1" />
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/activity_ragistration_form.xml" value="0.18854166666666666" />
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/activity_toast.xml" value="0.17447916666666666" />
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/activity_welcome_home.xml" value="0.17447916666666666" />
@@ -44,7 +46,7 @@
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/contactitem_list.xml" value="0.25" />
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/context_menu_item.xml" value="0.16" />
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/custome_dialog.xml" value="0.18020833333333333" />
-        <entry key="..\:/LearnAndroid/app/src/main/res/layout/custome_profile_item.xml" value="0.5" />
+        <entry key="..\:/LearnAndroid/app/src/main/res/layout/custome_profile_item.xml" value="0.36553030303030304" />
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/custome_toast.xml" value="0.1875" />
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/diolog_custome.xml" value="0.22" />
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/first_fragment.xml" value="0.22" />
@@ -57,6 +59,7 @@
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/profile_dialog.xml" value="0.20416666666666666" />
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/update_contact_list_item.xml" value="0.18697916666666667" />
         <entry key="..\:/LearnAndroid/app/src/main/res/layout/update_row_data.xml" value="0.20416666666666666" />
+        <entry key="..\:/LearnAndroid/app/src/main/res/menu/contact_deleate_row_single.xml" value="0.18854166666666666" />
         <entry key="..\:/LearnAndroid/app/src/main/res/menu/context_item.xml" value="0.20416666666666666" />
         <entry key="..\:/LearnAndroid/app/src/main/res/menu/menu.xml" value="0.15260416666666668" />
         <entry key="..\:/LearnAndroid/app/src/main/res/menu/profile_list_menu_item.xml" value="0.20416666666666666" />

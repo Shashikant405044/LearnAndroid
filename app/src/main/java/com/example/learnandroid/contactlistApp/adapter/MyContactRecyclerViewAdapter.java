@@ -1,8 +1,10 @@
 package com.example.learnandroid.contactlistApp.adapter;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.learnandroid.R;
@@ -20,11 +24,13 @@ import com.example.learnandroid.contactlistApp.activity.ContactDetailActivity;
 import com.example.learnandroid.contactlistApp.interfascpak.OnItemClickListner;
 import com.example.learnandroid.contactlistApp.model.ContactList;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class MyContactRecyclerViewAdapter extends RecyclerView.Adapter<MyContactRecyclerViewAdapter.MyViewHolder>{
-  //  private String[] AllowPermission = new String[]{Manifest.permission.CALL_PHONE};
+public class MyContactRecyclerViewAdapter extends RecyclerView.Adapter<MyContactRecyclerViewAdapter.MyViewHolder> {
+   private String[] AllowPermission = new String[]{Manifest.permission.CALL_PHONE};
 
+   Activity activity = new Activity();
     private Context context;
     private List<ContactList> contactLists;
     private OnItemClickListner listner;
@@ -53,6 +59,7 @@ public class MyContactRecyclerViewAdapter extends RecyclerView.Adapter<MyContact
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
 
         ContactList clist = contactLists.get(position);
         holder.firstName_Last.setText(clist.getF_name() + "" + clist.getL_name());
@@ -94,13 +101,17 @@ public class MyContactRecyclerViewAdapter extends RecyclerView.Adapter<MyContact
             }
         });
 
+
+
+
+
+
+
 //        holder.call.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//                Activity activity = new Activity();
-//
-//                if (ContextCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) ==
-//                        PackageManager.PERMISSION_GRANTED) {
+// if (ContextCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) ==0
+//                        ) {
 //                    Intent i = new Intent(Intent.ACTION_CALL);
 //                    String p = "tel:" + clist.getMobilNo();
 //                    i.setData(Uri.parse(p));
@@ -108,7 +119,8 @@ public class MyContactRecyclerViewAdapter extends RecyclerView.Adapter<MyContact
 //                }
 //
 //                else {
-//                    ActivityCompat.requestPermissions(activity, AllowPermission, 1);
+//                   // Activity activity = new Activity();
+//                    ActivityCompat.requestPermissions( activity,AllowPermission, 1);
 //                }
 //
 //
@@ -117,11 +129,15 @@ public class MyContactRecyclerViewAdapter extends RecyclerView.Adapter<MyContact
 
 
 
+
         listner.onItemClick(contactLists, position);
 
     }
 
-
+    public void resetData(ArrayList<ContactList> contactLists) {
+        this.contactLists = contactLists;
+        this.notifyDataSetChanged();
+    }
 
 
 
@@ -130,25 +146,24 @@ public class MyContactRecyclerViewAdapter extends RecyclerView.Adapter<MyContact
         return contactLists.size();
     }
 
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//
-//
-//        if (requestCode == 1)
-//        {
-//
-//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-//            {
-//
-//                Toast.makeText(context, "aaaceeesss", Toast.LENGTH_SHORT).show();
-//            }
-//            else {
-//               // customeToast("Permission Denied !!!!!");
-//
-//            }
-//
-//        }
-//    }
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+
+        if (requestCode == 1)
+        {
+
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+            {
+
+                Toast.makeText(context, "aaaceeesss", Toast.LENGTH_SHORT).show();
+            }
+            else {
+               // customeToast("Permission Denied !!!!!");
+
+            }
+
+        }
+    }
 
 
     class MyViewHolder extends RecyclerView.ViewHolder  {

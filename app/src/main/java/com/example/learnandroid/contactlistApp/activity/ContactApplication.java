@@ -6,10 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toast;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 import com.example.learnandroid.BaseActivity;
 import com.example.learnandroid.contactlistApp.database.CDataBaseAdapter;
 import com.example.learnandroid.contactlistApp.adapter.MyContactRecyclerViewAdapter;
@@ -17,27 +14,24 @@ import com.example.learnandroid.contactlistApp.interfascpak.OnItemClickListner;
 import com.example.learnandroid.contactlistApp.model.ContactList;
 import com.example.learnandroid.databinding.ActivityContactApplicationBinding;
 import com.example.learnandroid.databinding.ContactaddLayoutBinding;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContactApplication extends BaseActivity {
-  private CDataBaseAdapter adapter;
+public class ContactApplication extends BaseActivity  {
+    private CDataBaseAdapter adapter;
     private Cursor cursor;
+    int clickedPosition;
     ActivityContactApplicationBinding binding;
     ContactaddLayoutBinding contactaddLayoutBinding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityContactApplicationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        ContactApplication.this.setTitle("ContactListApp");
         adapter = new CDataBaseAdapter(this);
         adapter.openDataBase();
-
         loadDataInListView();
-
-
     }
 
     public void loadDataInListView() {
@@ -47,18 +41,14 @@ public class ContactApplication extends BaseActivity {
         MyContactRecyclerViewAdapter adapter = new MyContactRecyclerViewAdapter(this, getAllContactLit(), new OnItemClickListner() {
             @Override
             public void onItemClick(List<ContactList> contactList, int position) {
-
-
             }
         });
 
         binding.recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-
     }
 
     public void floating_btn(View view) {
-
         contactaddLayoutBinding = ContactaddLayoutBinding.inflate(getLayoutInflater());
         Dialog dialog = new Dialog(ContactApplication.this);
         dialog.setContentView(contactaddLayoutBinding.getRoot());
@@ -71,6 +61,32 @@ public class ContactApplication extends BaseActivity {
             @Override
             public void onClick(View view) {
 
+                String F = contactaddLayoutBinding.fName.getText().toString();
+                String L = contactaddLayoutBinding.LName.getText().toString();
+                String M = contactaddLayoutBinding.phoneNo.getText().toString();
+
+
+                if (F.equals(""))
+                {
+                    contactaddLayoutBinding.fName.setError("Enter F-Name");
+                    contactaddLayoutBinding.fName.requestFocus();
+                    return;
+                }
+
+                if (L.equals(""))
+                {
+                    contactaddLayoutBinding.LName.setError("Enter L-Name");
+                    contactaddLayoutBinding.LName.requestFocus();
+                    return;
+                }
+
+                if (M.equals(""))
+                {
+                    contactaddLayoutBinding.phoneNo.setError("Enter Phone No");
+                    contactaddLayoutBinding.phoneNo.requestFocus();
+                    return;
+                }
+
                 adapter.insertData(ContactApplication.this,
                         contactaddLayoutBinding.fName.getText().toString(),
                         contactaddLayoutBinding.LName.getText().toString(),
@@ -78,14 +94,15 @@ public class ContactApplication extends BaseActivity {
                         contactaddLayoutBinding.emailId.getText().toString(),
                         contactaddLayoutBinding.addressInput.getText().toString());
 
-                        loadDataInListView();
+                loadDataInListView();
+                dialog.dismiss();
 
             }
         });
 
     }
 
-    public  List<ContactList> getAllContactLit() {
+    public List<ContactList> getAllContactLit() {
         List<ContactList> contactDataLists = new ArrayList<>();
         cursor = adapter.getAllData();
         if (cursor.getCount() > 0) {

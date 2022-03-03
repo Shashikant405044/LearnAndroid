@@ -7,18 +7,31 @@
     tools:context=".contactlistApp.activity.ContactApplication">
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:onClick="floating_btn"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:src="@drawable/add_icon"
+        android:layout_marginBottom="40dp"
+        android:onClick="floating_btn" />
+    </RelativeLayout>
 </RelativeLayout>

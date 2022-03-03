@@ -77,6 +77,21 @@ public class CDataBaseAdapter {
 
     }
 
+    public void deleteSingleRecord(Context context, String rowId){
+        // DELETE * FROM STUDENT Where RowDI = 101;
+        int deletedItems = sqLiteDatabase.delete(Table_Name
+                , ROW_ID+" = "+rowId, null);
+        if (deletedItems > 0 ){
+
+            Toast.makeText(context, deletedItems+" Record deleted", Toast.LENGTH_SHORT).show();
+        }else {
+
+            Toast.makeText(context, "Try Again !!!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
     public void updateRecord(Context context, String f_name, String l_name, String mobilNo, String email
             ,String address_bar,String rowId) {
         ContentValues contentValues = new ContentValues();

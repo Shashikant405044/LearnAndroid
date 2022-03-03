@@ -145,18 +145,37 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
+    <LinearLayout
+        android:layout_margin="2dp"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:drawableEnd="@drawable/deledata"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn_custome_size"
+            android:text="Deleate"
+            android:gravity="center"
+            android:id="@+id/delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
         android:drawableEnd="@drawable/edit"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/btn_custome_size"
         android:text="Edit"
         android:gravity="center"
         android:id="@+id/edit_cotact_btn"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="250dp"
-        android:layout_marginBottom="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    </LinearLayout>
 
 </LinearLayout>
 

@@ -14,6 +14,7 @@ import com.example.learnandroid.BaseActivity;
 import com.example.learnandroid.R;
 import com.example.learnandroid.adapter.CustomListAdapter;
 import com.example.learnandroid.adapter.DataBaseAdapter;
+
 import com.example.learnandroid.databinding.ActivityProfileListBinding;
 import com.example.learnandroid.databinding.ProfileDialogBinding;
 import com.example.learnandroid.databinding.UpdateRowDataBinding;
@@ -24,7 +25,6 @@ public class ProfileListActivity extends BaseActivity implements AdapterView.OnI
     private DataBaseAdapter adapter;
     ActivityProfileListBinding binding;
     ProfileDialogBinding profileDialogBinding;
-
     UpdateRowDataBinding updateRowDataBinding;
     int clickedPosition ;
     boolean isUpdate = false;
@@ -211,6 +211,24 @@ public class ProfileListActivity extends BaseActivity implements AdapterView.OnI
         profileDialogBinding.profileCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String title = profileDialogBinding.firstNameInput.getText().toString();
+                String des = profileDialogBinding.lastNameInput.getText().toString();
+
+                if (title.equals(""))
+                {
+                    profileDialogBinding.firstNameInput.setError("Enter Title");
+                    profileDialogBinding.firstNameInput.requestFocus();
+                    return;
+                }
+
+                if (des.equals(""))
+                {
+                    profileDialogBinding.lastNameInput.setError("Enter Note Here");
+                    profileDialogBinding.lastNameInput.requestFocus();
+                    return;
+                }
+
                 adapter.insertData(ProfileListActivity.this, profileDialogBinding.firstNameInput.getText().toString(),
                         profileDialogBinding.lastNameInput.getText().toString(),
                         BaseActivity.getDateTime());
@@ -255,7 +273,7 @@ public class ProfileListActivity extends BaseActivity implements AdapterView.OnI
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
 
-            case R.id.deleate:
+            case R.id.delete:
                 cursor.moveToPosition(clickedPosition);
                 String rowId = cursor.getString(0);
                 adapter.deleteSingleRecord(ProfileListActivity.this,rowId);

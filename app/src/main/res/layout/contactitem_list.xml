@@ -3,13 +3,14 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_margin="7dp"
+    android:background="#00FFFFFF"
     android:id="@+id/liniaer_data"
     android:layout_marginTop="10dp"
     android:layout_height="wrap_content">
     <TextView
         android:id="@+id/fandLastName"
         android:text="FirstName"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:textStyle="normal"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
@@ -26,9 +27,9 @@
 
         android:layout_weight="1"
         android:text="mobile_no"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="3dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -37,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="3dp"
             android:layout_weight="2"
             android:src="@drawable/dial"
             android:text="Dia"
@@ -49,7 +50,7 @@
             android:text="cal"
             android:textSize="22sp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>

@@ -19,42 +19,19 @@ import com.example.learnandroid.R;
 import com.example.learnandroid.databinding.ActivityBmiApplicationBinding;
 
 
-public class BmiApplication extends BaseActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
+public class BmiApplication extends BaseActivity implements View.OnClickListener {
     private ActivityBmiApplicationBinding binding;
-    Spinner spinnerCity;
-    String option [] = {"Option1","Option2"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityBmiApplicationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         BmiApplication.this.setTitle("BmiApplication");
-
         binding.resBtn.setOnClickListener(this);
         binding.clear.setOnClickListener(this);
-        binding.spinnercity.setOnItemSelectedListener(this);
-
-        ArrayAdapter adapterspinner =  new ArrayAdapter(this, android.R.layout.simple_spinner_item,option);
-        adapterspinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        binding.spinnercity.setAdapter(adapterspinner);
-
-
 
     }
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-
-
-
-        Toast.makeText(getApplicationContext(), option[0], Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
-
 
 
     @Override
@@ -65,9 +42,6 @@ public class BmiApplication extends BaseActivity implements View.OnClickListener
 
                 String strweight = binding.etWeight.getText().toString();
                 String strheight = binding.etHieght.getText().toString();
-
-//                String strweight = binding.etWeight.getEditText().toString();
-//                String strheight = binding.etHieght.getEditText().toString();
 
                 if (strheight != null && !"".equals(strheight)
                         && strweight != null && !"".equals(strweight)) {
@@ -83,10 +57,7 @@ public class BmiApplication extends BaseActivity implements View.OnClickListener
             case R.id.clear:
 
                 binding.etHieght.setText("");
-              binding.etWeight.setText("");
-
-//                binding.etHieght.getEditText().setText("");
-//                binding.etWeight.getEditText().setText("");
+                binding.etWeight.setText("");
                 binding.myBmiOutput.setText("");
                 binding.clear.setVisibility(View.GONE);
                 binding.resBtn.setVisibility(View.VISIBLE);
